@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wokrien Ressel — Secret </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-theme">
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <div class="brand-icon">☁</div>
+      <div class="brand-text">
+        <strong>Wokrien Ressel</strong>
+        <span>secure admin panel</span>
+      </div>
+    </a>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Переключить тему">
+        <span class="theme-pill">
+          <span class="theme-icon">☀</span>
+          <span class="theme-label">Light</span>
+        </span>
+      </button>
+      <a href="index.html" class="secondary-btn">← В магазин</a>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section id="loginView" class="admin-login-wrap">
+      <div class="admin-card admin-login-card">
+        <div class="eyebrow">защищённый вход</div>
+        <h1>Вход в админку</h1>
+        <p class="admin-login-copy">
+          Войдите под администраторской учётной записью Supabase.
+        </p>
+
+        <form id="loginForm" class="admin-form">
+          <label>
+            Email
+            <input id="loginEmail" type="email" autocomplete="username" required placeholder="admin@example.com">
+          </label>
+
+          <label>
+            Пароль
+            <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="••••••••">
+          </label>
+
+          <button class="admin-btn primary" type="submit">Войти</button>
+          <div id="loginError" class="admin-error" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="adminView" hidden>
+      <div class="admin-titlebar">
+        <div>
+          <div class="eyebrow">управление магазином</div>
+          <h1>Админка Wokrien Ressel</h1>
+          <p id="adminIdentity" class="admin-identity"></p>
+        </div>
+
+        <div class="admin-actions-row">
+          <button id="reloadProducts" class="admin-btn ghost">Обновить</button>
+          <button id="logoutBtn" class="admin-btn danger">Выйти</button>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <section class="admin-card">
+          <h2>Добавить предмет</h2>
+
+          <form id="productForm" class="admin-form">
+            <label>
+              Название
+              <input id="title" required placeholder="Например: Windows Pro">
+            </label>
+
+            <label>
+              Цена, ₽
+              <input id="price" required type="number" min="0" step="1" value="990">
+            </label>
+
+            <label>
+              Сток
+              <input id="stock" required type="number" min="0" step="1" value="1">
+            </label>
+
+            <label>
+              Бейдж
+              <input id="badge" placeholder="Хит / Новинка / Pro">
+            </label>
+
+            <label>
+              Иконка
+              <input id="icon" placeholder="✦" value="✦">
+            </label>
+
+            <label>
+              Описание
+              <textarea id="description" placeholder="Короткое описание предмета"></textarea>
+            </label>
+
+            <button class="admin-btn primary" type="submit">Добавить предмет</button>
+            <div id="formMessage" class="admin-success" hidden></div>
+          </form>
+
+          <div class="admin-note">
+            Все изменения записываются в общую базу Supabase и сразу доступны всем посетителям сайта.
+          </div>
+        </section>
+
+        <section class="admin-card">
+          <div class="admin-list-head">
+            <h2>Предметы и сток</h2>
+            <span id="productCount" class="admin-count">0</span>
+          </div>
+          <div id="adminProducts" class="admin-products"></div>
+        </section>
+      </div>
+
+
+      <section class="admin-card admin-orders-card">
+        <div class="admin-list-head">
+          <h2>Заказы</h2>
+          <span id="orderCount" class="admin-count">0</span>
+        </div>
+        <div id="adminOrders" class="admin-orders"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

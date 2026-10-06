@@ -1,0 +1,11 @@
+# Run from the project folder after `supabase login`
+
+supabase link --project-ref YOUR_PROJECT_REF
+
+supabase secrets set YOOMONEY_RECEIVER=YOUR_WALLET_NUMBER
+supabase secrets set SITE_URL=https://YOUR-SITE.pages.dev
+supabase secrets set YOOMONEY_NOTIFICATION_SECRET=YOUR_NOTIFICATION_SECRET
+
+supabase functions deploy create-order --no-verify-jwt
+supabase functions deploy order-status --no-verify-jwt
+supabase functions deploy yoomoney-webhook --no-verify-jwt

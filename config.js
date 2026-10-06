@@ -1,0 +1,4 @@
+window.WOKRIEN_CONFIG = {
+  SUPABASE_URL: "https://rshbvnukmuugfafcaylc.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzaGJ2bnVrbXV1Z2ZhZmNheWxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzMTg4NDUsImV4cCI6MjEwNjg5NDg0NX0.WVCCt_jbB7GHnScRa-qjvn6913BjclXgpyoBBKVoOp4"
+};

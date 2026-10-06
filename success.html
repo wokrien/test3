@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wokrien Ressel — статус заказа</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <div class="brand-icon">☁</div>
+      <div class="brand-text">
+        <strong>Wokrien Ressel</strong>
+        <span>order status</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <button id="themeToggle" class="theme-toggle">
+        <span class="theme-pill">
+          <span class="theme-icon">☀</span>
+          <span class="theme-label">Light</span>
+        </span>
+      </button>
+      <a href="index.html" class="secondary-btn">← В магазин</a>
+    </div>
+  </header>
+
+  <main class="status-shell">
+    <section class="status-card">
+      <div id="statusIcon" class="status-icon">⋯</div>
+      <div class="eyebrow">Wokrien Ressel</div>
+      <h1 id="statusTitle">Проверяем оплату</h1>
+      <p id="statusText">ЮMoney возвращает вас на сайт после перевода. Сам возврат ещё не является подтверждением платежа — ждём серверное уведомление.</p>
+
+      <div id="orderInfo" class="status-order-info" hidden></div>
+
+      <div class="status-actions">
+        <button id="refreshStatus" class="primary-btn">Проверить статус</button>
+        <a href="index.html" class="secondary-btn">Вернуться в магазин</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="success.js"></script>
+</body>
+</html>

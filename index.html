@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wokrien Ressel — магазин ПО</title>
+  <meta name="theme-color" content="#d7ecff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-theme">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <header class="site-header">
+    <a href="#" class="brand">
+      <div class="brand-icon">☁</div>
+      <div class="brand-text">
+        <strong>Wokrien Ressel</strong>
+        <span>software reseller</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#benefits">Преимущества</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">FAQ</a>
+      <a href="admin.html">Secret</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Переключить тему">
+        <span class="theme-pill">
+          <span class="theme-icon">☀</span>
+          <span class="theme-label">Light</span>
+        </span>
+      </button>
+      <button id="cartOpenBtn" class="cart-button">
+        Корзина
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">♡ магазин лицензий, подписок и цифровых товаров</div>
+        <h1>Красивый магазин ПО <span>в эстетике Cinnamoroll</span></h1>
+        <p>
+          Более аккуратная, современная и атмосферная версия сайта:
+          мягкий pastel/light режим, полноценный dark режим и автоматическая
+          смена персонажа на Kuromi при переключении темы.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog" class="primary-btn">Перейти в каталог</a>
+          <a href="#benefits" class="secondary-btn">Как это работает</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point-card">
+            <strong>Мгновенная выдача</strong>
+            <span>ключ и инструкция после оплаты</span>
+          </div>
+          <div class="point-card">
+            <strong>Уютный дизайн</strong>
+            <span>светлая и тёмная версии магазина</span>
+          </div>
+          <div class="point-card">
+            <strong>Безопасность</strong>
+            <span>готово для подключения оплаты и backend</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="character-shell">
+          <div class="character-glow"></div>
+          <div class="character-ring ring-a"></div>
+          <div class="character-ring ring-b"></div>
+
+          <div class="hero-tag hero-tag-top">Now in pastel mode ✦</div>
+
+          <img
+            id="heroMascot"
+            src="assets/cinnamoroll.png"
+            data-light="assets/cinnamoroll.png"
+            data-dark="assets/kuromi.png"
+            alt="Главный персонаж сайта"
+            class="hero-mascot"
+          />
+
+          <div class="hero-tag hero-tag-bottom">Dark mode → Kuromi ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-grid">
+      <article class="promo-card">
+        <div class="promo-kicker">новое</div>
+        <h3>Стильная главная страница</h3>
+        <p>Большой hero-блок, анимации, плавные состояния и красивые карточки товаров.</p>
+      </article>
+      <article class="promo-card">
+        <div class="promo-kicker">upgrade</div>
+        <h3>Тёмная тема</h3>
+        <p>При переключении темы меняются цвета интерфейса, кнопки, фон и маскот.</p>
+      </article>
+      <article class="promo-card">
+        <div class="promo-kicker">готово</div>
+        <h3>Для дальнейшей доработки</h3>
+        <p>Можно подключить реальные товары, личный кабинет, оплату и авто-выдачу ключей.</p>
+      </article>
+    </section>
+
+    <section class="toolbar" id="catalog">
+      <div class="toolbar-head">
+        <div>
+          <div class="eyebrow">каталог</div>
+          <h2>Предметы</h2>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control-right">
+          <label class="search-field">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Поиск предмета..." />
+          </label>
+
+          <select id="sortSelect">
+            <option value="popular">По популярности</option>
+            <option value="price-asc">Сначала дешевле</option>
+            <option value="price-desc">Сначала дороже</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-grid" id="productsGrid"></section>
+
+    <section class="benefits" id="benefits">
+      <div class="section-head">
+        <div class="eyebrow">почему именно этот дизайн</div>
+        <h2>Что стало лучше</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <div class="benefit-icon">✦</div>
+          <h3>Гораздо чище визуально</h3>
+          <p>Более проработанная типографика, отступы, стеклянные карточки и хороший визуальный ритм.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon">☾</div>
+          <h3>Полноценный dark mode</h3>
+          <p>Это не просто смена цвета — перестраивается атмосфера сайта и главный персонаж.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon">♡</div>
+          <h3>Готово к развитию</h3>
+          <p>Верстку удобно расширять: отдельные страницы товара, оформление заказа, профиль и т.д.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="section-head">
+        <div class="eyebrow">отзывы</div>
+        <h2>Как это может выглядеть дальше</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Очень приятный и узнаваемый стиль. Для магазина цифровых товаров выглядит необычно и мило.”</p>
+          <strong>— demo review</strong>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Переключение между Cinnamoroll и Kuromi — классная идея, сайт сразу воспринимается живее.”</p>
+          <strong>— demo review</strong>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>“Уже на этом этапе можно использовать как красивый прототип для будущего реального магазина.”</p>
+          <strong>— demo review</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-head">
+        <div class="eyebrow">faq</div>
+        <h2>Частые вопросы</h2>
+      </div>
+
+      <details open>
+        <summary>Что уже работает в этой версии?</summary>
+        <p>Каталог, категории, поиск, сортировка, корзина, сохранение товаров в localStorage, светлая/тёмная тема и смена персонажа.</p>
+      </details>
+      <details>
+        <summary>Можно ли поставить свои товары?</summary>
+        <p>Да. Все товары задаются в JavaScript-массиве — можно легко заменить демо-позиции на реальные.</p>
+      </details>
+      <details>
+        <summary>Можно ли сделать сайт полностью рабочим?</summary>
+        <p>Да. Следующий этап — backend, база данных, личный кабинет, оплата и выдача цифрового товара после заказа.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Wokrien Ressel</strong>
+      <p>Магазин цифрового ПО • Cinnamoroll / Kuromi theme</p>
+    </div>
+    <div class="footer-note">© 2026 • UI concept</div>
+  </footer>
+
+  <aside id="cartPanel" class="cart-panel" aria-hidden="true">
+    <div class="cart-top">
+      <div>
+        <div class="eyebrow">ваш заказ</div>
+        <h3>Корзина</h3>
+      </div>
+      <button id="cartCloseBtn" class="icon-close">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-bottom">
+      <div class="cart-total">
+        <span>Итого</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button id="checkoutBtn" class="primary-btn cart-checkout">Оформить заказ</button>
+    </div>
+  </aside>
+
+
+  <div id="paymentModal" class="payment-modal" aria-hidden="true">
+    <div class="payment-modal-card">
+      <button id="paymentModalClose" class="icon-close payment-close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">способ оплаты</div>
+      <h3>Оплата через ЮMoney</h3>
+      <p>Заказ сначала создаётся в Wokrien Ressel, затем вы переходите на защищённую страницу ЮMoney.</p>
+
+      <div class="payment-methods">
+        <button class="payment-method" data-payment-type="AC">
+          <span class="payment-method-icon">💳</span>
+          <span>
+            <strong>Банковская карта</strong>
+            <small>оплата картой через ЮMoney</small>
+          </span>
+        </button>
+
+        <button class="payment-method" data-payment-type="PC">
+          <span class="payment-method-icon">Ю</span>
+          <span>
+            <strong>Кошелёк ЮMoney</strong>
+            <small>оплата из кошелька ЮMoney</small>
+          </span>
+        </button>
+      </div>
+
+      <div id="checkoutMessage" class="payment-message" hidden></div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay"></div>
+  <div id="toast" class="toast">Добавлено в корзину ♡</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
